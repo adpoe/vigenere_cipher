@@ -1,4 +1,4 @@
--- A Vignere Cipher
+-- A Vigenere Cipher
 module Cipher where
 import Data.Char
 import Data.List
@@ -9,8 +9,8 @@ modValue    = endUnicode - baseUnicode
 
 -- Functions to encode
 matchKeyWord :: [Char] -> [Char] -> [(Char, Int)]
-matchKeyWord key text =  zip text inifiKey
-  where inifiKey = keyWordMapping key
+matchKeyWord key text =  zip text infiniKey
+  where infiniKey = keyWordMapping key
 
 keyWordMapping :: [Char] -> [Int]
 keyWordMapping xs = cycle (map ord xs)
