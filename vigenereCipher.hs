@@ -25,8 +25,8 @@ singleShift c n = shiftedChar
         shiftedInt  = ((charAsInt + n) `mod` (baseUnicode + modValue))
         shiftedChar = chr shiftedInt
 
-vignere :: [Char] -> [Char]-> [Char] -- Pipeline matchKeyWord into cipherLetter...
-vignere key txt =  cipherLetter (matchKeyWord  key txt)
+vigenere :: [Char] -> [Char]-> [Char] -- Pipeline matchKeyWord into cipherLetter...
+vigenere key txt =  cipherLetter (matchKeyWord  key txt)
 
 
 -- Functions to decode
@@ -44,5 +44,5 @@ unCipherLetter :: [(Char, Int)] -> [Char]
 unCipherLetter []            = []
 unCipherLetter ((c,n):xs) =  (unShift c n) : unCipherLetter xs
 
-unVignere :: [Char] -> [Char] -> [Char]
-unVignere key txt =  unCipherLetter (unMatchKeyWord  key txt)
+unVigenere :: [Char] -> [Char] -> [Char]
+unVigenere key txt =  unCipherLetter (unMatchKeyWord  key txt)
